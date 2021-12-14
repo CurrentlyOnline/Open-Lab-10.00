@@ -7,16 +7,64 @@ namespace Open_Lab_10._00
         static void Main(string[] args)
         {
             Book LOTR = new Book();
+            Book LOTR2 = new Book();
+            Book LOTR3 = new Book();
+            Book HOBIT = new Book();
+
             LOTR.Title = "Lord of the rings";
             LOTR.Pages = 304;
             LOTR.Category = "Fantasy";
             LOTR.Author = "Tolkien";
             LOTR.ReleaseDate = 2002;
             LOTR.returning();
+            Console.WriteLine();
+
+            LOTR2.returning();
+            Console.WriteLine();
+
+            LOTR3.Title = "Lord of the rings 3";
+            LOTR3.Pages = 360;
+            LOTR3.returning();
+            Console.WriteLine();
+
+            HOBIT.Title = "Hobit";
+            HOBIT.Pages = 255;
+            HOBIT.Category = "Fantasy";
+            HOBIT.Author = "Tolkien";
+            HOBIT.ReleaseDate = 2004;
+            HOBIT.returning();
+
+
         }
     }
     class Book
     {
+        public Book()
+        {
+            Title = "-1";
+            Pages = -1;
+            Category = "-1";
+            Author = "-1";
+            ReleaseDate = -1;
+        }
+        public Book(string title, int pages)
+        {
+            Title = title;
+            Pages = pages;
+            Category = "-1";
+            Author = "-1";
+            ReleaseDate = -1;
+        }
+        public Book(string title, int pages, string category, string author, int releaseDate)
+        {
+            Title = title;
+            Pages = pages;
+            Category = category;
+            Author = author;
+            ReleaseDate = releaseDate;
+        }
+
+
         private string title;
         private int pages;
         private string category;
