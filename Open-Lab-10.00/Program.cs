@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Open_Lab_10._00
 {
@@ -29,7 +30,7 @@ namespace Open_Lab_10._00
 
             HOBIT.Title = "Hobit";
             HOBIT.Pages = 255;
-            HOBIT.Category = "Fantasy";
+            HOBIT.Category = Book.categoryList[4];
             HOBIT.Author = "Tolkien";
             HOBIT.ReleaseDate = 2004;
             HOBIT.returning();
@@ -38,7 +39,17 @@ namespace Open_Lab_10._00
         }
     }
     class Book
-    {
+    {   
+        /// <summary>
+        /// string list of categories
+        /// </summary>
+        public static List<string> categoryList = new List<string>
+        {
+            "detské", "romantické", "náučné", "sci-fi", "dobrodružné"
+        };
+
+
+
         public Book()
         {
             Title = "-1";
@@ -102,7 +113,7 @@ namespace Open_Lab_10._00
         }
         public string Category
         {
-            get
+            private get 
             {
                 return category;
             }
