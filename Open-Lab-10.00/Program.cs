@@ -7,42 +7,19 @@ namespace Open_Lab_10._00
     {
         static void Main(string[] args)
         {
-            Book LOTR = new Book();
+            Book LOTR = new Book("Lord of the rings", 304, "Fantasy", "Tolkien", 2002);
             Book LOTR2 = new Book();
-            Book LOTR3 = new Book();
-            Book HOBIT = new Book();
+            Book LOTR3 = new Book("Lord of the rings 3", 360);
+            Book HOBIT = new Book("Hobit", 255, Book.categoryList[4], "Tolkien", 2004);
+            Console.WriteLine(LOTR);
 
-            LOTR.Title = "Lord of the rings";
-            LOTR.Pages = 304;
-            LOTR.Category = "Fantasy";
-            LOTR.Author = "Tolkien";
-            LOTR.ReleaseDate = 2002;
-            LOTR.returning();
-            Console.WriteLine();
-
-            LOTR2.returning();
-            Console.WriteLine();
-
-            LOTR3.Title = "Lord of the rings 3";
-            LOTR3.Pages = 360;
-            LOTR3.returning();
-            Console.WriteLine();
-
-            HOBIT.Title = "Hobit";
-            HOBIT.Pages = 255;
-            HOBIT.Category = Book.categoryList[4];
-            HOBIT.Author = "Tolkien";
-            HOBIT.ReleaseDate = 2004;
-            HOBIT.returning();
 
 
         }
     }
     class Book
-    {   
-        /// <summary>
-        /// string list of categories
-        /// </summary>
+    {
+
         public static List<string> categoryList = new List<string>
         {
             "detské", "romantické", "náučné", "sci-fi", "dobrodružné"
@@ -84,11 +61,11 @@ namespace Open_Lab_10._00
 
         public string Title
         {
-            get 
+            get
             {
                 return title;
             }
-            set 
+            set
             {
                 title = value;
             }
@@ -113,7 +90,7 @@ namespace Open_Lab_10._00
         }
         public string Category
         {
-            private get 
+            private get
             {
                 return category;
             }
@@ -152,18 +129,20 @@ namespace Open_Lab_10._00
             }
         }
 
-        public void returning()
+
+
+        public override string ToString()
         {
-            Console.WriteLine(Title);
-            Console.WriteLine(Pages);
-            Console.WriteLine(Category);
-            Console.WriteLine(Author);
-            Console.WriteLine(ReleaseDate);
+            return Title + "\n" + Pages + "\n" + Category + "\n" + Author  + "\n" + releaseDate;
+
         }
-        
+
+
+        // Console.WriteLine(Title);
+        // Console.WriteLine(Pages);
+        // Console.WriteLine(Category);
+        // Console.WriteLine(Author);
+        // Console.WriteLine(ReleaseDate);
     }
+
 }
-                    
-
-    
-
